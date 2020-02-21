@@ -62,7 +62,7 @@ while ($row = mysqli_fetch_assoc($result)) { ?>
 <tr>
 <td>Category</td>
 <td><select name="category">
-                <option value="" disabled selected style="display: none;"><? echo $row['category'] ?></option>
+                <option value="" disabled selected style="display: none;"><?php echo $row['category'] ?></option>
                 <option value="Laboratory">Laboratory</option>
                 <option value="IT">IT</option>
                 <option value="Project">Project equipment</option>
@@ -74,30 +74,30 @@ while ($row = mysqli_fetch_assoc($result)) { ?>
 <tr>
 <td>Status</td>
 <td><select name="status">
-                <option value="" disabled selected style="display: none;"><? echo $row['status'] ?></option>
+                <option value="" disabled selected style="display: none;"><?php echo $row['status'] ?></option>
                 <option value="Active">Active</option>
                 <option value="Defect">Defect</option>
     </select></td>
 </tr>
 <td>Description</td>
-<td><input type="text" name="description" placeholder="<? echo $row['description'] ?>"/></td>
+<td><input type="text" name="description" placeholder="<?php echo $row['description'] ?>"/></td>
 </tr>
 <tr>
 <td>Manufacture</td>
-<td><input type="text" name="manufacture" placeholder="<? echo $row['manufacture'] ?>"/></td>
+<td><input type="text" name="manufacture" placeholder="<?php echo $row['manufacture'] ?>"/></td>
 </tr>
 <tr>
 <td>Model</td>
-<td><input type="text" name="model" placeholder="<? echo $row['model'] ?>"/></td>
+<td><input type="text" name="model" placeholder="<?php echo $row['model'] ?>"/></td>
 </tr>
 <tr>
 <td>Serial</td>
-<td><input type="text" name="serial" placeholder="<? echo $row['serial'] ?>"/></td>
+<td><input type="text" name="serial" placeholder="<?php echo $row['serial'] ?>"/></td>
 </tr>
 <tr>
 <td>Location</td>
 <td><select name="location">
-                <option value="" disabled selected style="display: none;"><? echo $row['location'] ?></option>
+                <option value="" disabled selected style="display: none;"><?php echo $row['location'] ?></option>
                 <option value="Office1">Office1</option>
                 <option value="Office2">Office2</option>
     </select></td>
@@ -105,7 +105,7 @@ while ($row = mysqli_fetch_assoc($result)) { ?>
 <tr>
 <td>In transport to</td>
 <td><select name="transport">
-                <option value="" disabled selected style="display: none;"><? echo $row['transport'] ?></option>
+                <option value="" disabled selected style="display: none;"><?php echo $row['transport'] ?></option>
                 <option value="none">none</option>
                 <option value="Office1">Office1</option>
                 <option value="Office2">Office2</option>
@@ -113,61 +113,61 @@ while ($row = mysqli_fetch_assoc($result)) { ?>
 </tr>
 <tr>
 <td>Responsible</td>
-<td><input type="text" name="responsible" placeholder="<? echo $row['responsible'] ?>"/></td>
+<td><input type="text" name="responsible" placeholder="<?php echo $row['responsible'] ?>"/></td>
 </tr>
 <tr>
 <td>Supplier</td>
-<td><input type="text" name="supplier" placeholder="<? echo $row['supplier'] ?>"/></td>
+<td><input type="text" name="supplier" placeholder="<?php echo $row['supplier'] ?>"/></td>
 </tr>
 <tr>
 <td>Warranty</td>
-<td><input type="text" name="warranty" placeholder="<? echo $row['warranty'] ?>"/></td>
+<td><input type="text" name="warranty" placeholder="<?php echo $row['warranty'] ?>"/></td>
 </tr>
 <tr>
 <td>Purchase value</td>
-<td><input type="text" name="purchase_value" placeholder="<? echo $row['purchase_value'] ?>"/></td>
+<td><input type="text" name="purchase_value" placeholder="<?php echo $row['purchase_value'] ?>"/></td>
 </tr>
 <tr>
 <td>Ownership</td>
-<td><input type="text" name="ownership" placeholder="<? echo $row['ownership'] ?>"/></td>
+<td><input type="text" name="ownership" placeholder="<?php echo $row['ownership'] ?>"/></td>
 </tr>
 <tr>
 <td>Purchase date</td>
-<td><input type="text" class="datepicker" name="purchase_date" placeholder="<? echo $row['purchase_date'] ?>"/></td>
+<td><input type="text" class="datepicker" name="purchase_date" placeholder="<?php echo $row['purchase_date'] ?>"/></td>
 </tr>
 <tr>
 <td>Depreciation</td>
 <td><select name="depreciation">
-                <option value="" disabled selected style="display: none;"><? echo $row['depreciation'] ?></option>
+                <option value="" disabled selected style="display: none;"><?php echo $row['depreciation'] ?></option>
                 <option value=""></option>
                 <option value="10">1/10 each year</option>
     </select></td>
 </tr>
 <tr>
 <td>Insurance value</td>
-<td><input type="text" name="insurance_value" placeholder="<? echo $row['insurance_value'] ?>"/></td>
+<td><input type="text" name="insurance_value" placeholder="<?php echo $row['insurance_value'] ?>"/></td>
 </tr>
 <tr>
 <td>Insurance date</td>
-<td><input type="text" class="datepicker" name="insurance_date" placeholder="<? echo $row['insurance_date'] ?>"/></td>
+<td><input type="text" class="datepicker" name="insurance_date" placeholder="<?php echo $row['insurance_date'] ?>"/></td>
 </tr>
 <tr>
 <td>Insurance duration</td>
-<td><input type="text" name="insurance_duration" placeholder="<? echo $row['insurance_duration'] ?>"/></td>
+<td><input type="text" name="insurance_duration" placeholder="<?php echo $row['insurance_duration'] ?>"/></td>
 </tr>
 <tr>
 <td>Scrap value</td>
-<td><input type="text" name="scrap" placeholder="<? echo $row['scrap'] ?>"/></td>
+<td><input type="text" name="scrap" placeholder="<?php echo $row['scrap'] ?>"/></td>
 </tr>
 <tr>
 <td>Liquidation value</td>
-<td><input type="text" name="liquidation" placeholder="<? echo $row['liquidation'] ?>"/></td>
+<td><input type="text" name="liquidation" placeholder="<?php echo $row['liquidation'] ?>"/></td>
 </tr>
 <tr>
 <tr>
 <td>Calibration</td>
 <td><select name="calibration">
-                <option value="" disabled selected style="display: none;"><? echo $row['calibration'] ?></option>
+                <option value="" disabled selected style="display: none;"><?php echo $row['calibration'] ?></option>
                 <option value="No">No</option>
                 <option value="Yes">Yes</option>
     </select>
@@ -176,7 +176,7 @@ while ($row = mysqli_fetch_assoc($result)) { ?>
 <tr>
 <td>Class</td>
 <td><select name="calibration_class">
-                <option value="" disabled selected style="display: none;"><? echo $row['calibration_class'] ?></option>
+                <option value="" disabled selected style="display: none;"><?php echo $row['calibration_class'] ?></option>
                 <option value=""></option>
                 <option value="C1">C1</option>
                 <option value="C2">C2</option>
@@ -187,7 +187,7 @@ while ($row = mysqli_fetch_assoc($result)) { ?>
 <tr>
 <td>Calibration interval</td>
 <td><select name="calibration_interval">
-                <option value="" disabled selected style="display: none;"><? echo $row['calibration_interval'] ?></option>
+                <option value="" disabled selected style="display: none;"><?php echo $row['calibration_interval'] ?></option>
                 <option value="3">6</option>
                 <option value="6">6</option>
                 <option value="9">9</option>
@@ -196,15 +196,15 @@ while ($row = mysqli_fetch_assoc($result)) { ?>
 </tr>
 <tr>
 <td>Calibration last date</td>
-<td><input type="text" class="datepicker" name="calibration_last" placeholder="<? echo $row['calibration_last'] ?>"/></td>
+<td><input type="text" class="datepicker" name="calibration_last" placeholder="<?php echo $row['calibration_last'] ?>"/></td>
 </tr>
 <tr>
 <td>Calibration next date</td>
-<td><input type="text" class="datepicker" name="calibration_next" placeholder="<? echo $row['calibration_next'] ?>"/></td>
+<td><input type="text" class="datepicker" name="calibration_next" placeholder="<?php echo $row['calibration_next'] ?>"/></td>
 </tr>
 <tr>
 <td>Old id</td>
-<td><input type="text" name="id_old" placeholder="<? echo $row['id_old'] ?>"/></td>
+<td><input type="text" name="id_old" placeholder="<?php echo $row['id_old'] ?>"/></td>
 </tr>
 <tr>
 <td>Upload pictures</td>
