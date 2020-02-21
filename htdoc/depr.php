@@ -15,7 +15,8 @@ purchase_date AS PurchaseDate, purchase_value AS PurchaseValue,
 round((purchase_value - ((year(curdate()) - year(purchase_date)) * (purchase_value / depreciation))),0)
 AS ActualValue from items";
 #	union select '' AS ,'' AS ,'Sum' AS Sum, sum(purchase_value) AS SUM, '' AS from items
-$result = mysql_query($sql);
+
+$result = mysql_query($conn, $sql);
 
 if (!$result) {
     $message  = 'Wrong query: ' . mysql_error() . "\n";
@@ -34,7 +35,7 @@ if (!$result) {
   <th>ActualValue</th>
 </tr>
 <?php
-while ($row = mysql_fetch_assoc($result)) {
+while ($row = mysqli_fetch_assoc($result)) {
   echo "<tr>";
   echo "<td>" . $row['ID'] . "</td>";
   echo "<td>" . $row['Location'] . "</td>";

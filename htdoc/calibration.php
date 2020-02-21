@@ -15,7 +15,8 @@ $sql = "SELECT local_id, description, location, calibration_class,
         DATEDIFF(calibration_next,CURDATE()) as days_left
         from items WHERE calibration = 'Yes'
         AND calibration_next != '0000-00-00' order by calibration_next";
-$result = mysql_query($sql);
+        
+$result = mysqli_query($conn, $sql);
 
 if (!$result) {
     $message  = 'Wrong query: ' . mysql_error() . "\n";
@@ -37,7 +38,7 @@ if (!$result) {
   <th>Days left</t
 </tr>
 <?php
-while ($row = mysql_fetch_assoc($result)) {
+while ($row = mysqli_fetch_assoc($result)) {
     if ( $row['calibration_class'] == "C1" ) { $status_colors = "#b30047"; }
     else { $status_colors = ""; }
   echo "<tr>";

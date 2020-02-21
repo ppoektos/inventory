@@ -93,7 +93,7 @@ $sql = "select local_id AS ID, category AS Category, description AS Description,
 location AS Location, calibration_class AS Calibration_class, status AS Status,
 last_update AS Updated from items order by last_update desc";
 
-$result = mysql_query($sql);
+$result = mysqli_query($conn, $sql);
 
 if (!$result) {
     $message  = 'Wrong query: ' . mysql_error() . "\n";
@@ -115,7 +115,7 @@ if (!$result) {
 </tr>
 <?php
 
-while ($row = mysql_fetch_assoc($result)) {
+while ($row = mysqli_fetch_assoc($result)) {
     if ( $row['Calibration_class'] == "C1" ) { $status_colors = "#b30047"; }
     else { $status_colors = ""; }
   echo "<tr>";

@@ -32,7 +32,8 @@ $sql = "SELECT *,
 round((purchase_value - ((year(curdate()) - year(purchase_date)) * (purchase_value / depreciation))),0)
 AS ActualValue
 FROM items WHERE local_id = $ID";
-$result = mysql_query($sql);
+
+$result = mysqli_query($conn, $sql);
 
 if (!$result) {
     $message  = 'Wrong query: ' . mysql_error() . "\n";
@@ -40,10 +41,10 @@ if (!$result) {
     die($message); }
     
 $sql_picture = "SELECT filename FROM images WHERE item_id = $ID";
-$result_picture = mysql_query($sql_picture);
+$result_picture = mysqli_query($conn, $sql_picture);
 
 $sql_document = "SELECT filename FROM attachments WHERE item_id = $ID";
-$result_document = mysql_query($sql_document);
+$result_document = mysqli_query($conn, $sql_document);
 ?>
 
 <h1 align="center">Edit <?php echo $ID ?> </h1>
@@ -57,7 +58,7 @@ $result_document = mysql_query($sql_document);
 </tr>
 
 <?php
-while ($row = mysql_fetch_assoc($result)) { ?>
+while ($row = mysqli_fetch_assoc($result)) { ?>
 <tr>
 <td>Category</td>
 <td><select name="category">

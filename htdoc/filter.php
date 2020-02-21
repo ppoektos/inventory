@@ -23,7 +23,7 @@ if ( $office == "ALL" ) {
             last_update AS Updated from items WHERE location = '$office' order by $order";
     }
 
-    $result = mysql_query($sql);
+    $result = mysqli_query($conn, $sql);
     
 echo "<h3 align=\"center\">$office</h3>
 <table>
@@ -37,7 +37,7 @@ echo "<h3 align=\"center\">$office</h3>
   <th>Created</th>
 </tr>";
 
-while ($row = mysql_fetch_assoc($result)) {
+while ($row = mysqli_fetch_assoc($result)) {
     if ( $row['Calibration_class'] == "C1" ) { $status_colors = "#b30047"; }
     else { $status_colors = ""; }
   echo "<tr>";

@@ -19,7 +19,8 @@ round((purchase_value - ((year(curdate()) - year(purchase_date)) * (purchase_val
 AS ActualValue,
 DATEDIFF(calibration_next,CURDATE()) as days_left
 FROM items WHERE local_id = $ID";
-$result = mysql_query($sql);
+
+$result = mysqli_query($conn, $sql);
 
 if (!$result) {
     $message  = 'Wrong query: ' . mysql_error() . "\n";
@@ -27,13 +28,13 @@ if (!$result) {
     die($message); }
     
 $sql_picture = "SELECT filename FROM images WHERE item_id = $ID";
-$result_picture = mysql_query($sql_picture);
+$result_picture = mysqli_query($conn, $sql_picture);
 
 $sql_document = "SELECT filename FROM attachments WHERE item_id = $ID";
-$result_document = mysql_query($sql_document);
+$result_document = mysqli_query($conn, $sql_document);
 
 $sql_log = "SELECT date, log, comment FROM history WHERE item_id = $ID";
-$result_log = mysql_query($sql_log);
+$result_log = mysqli_query($conn, $sql_log);
 
 ?>
 
@@ -46,7 +47,7 @@ $result_log = mysql_query($sql_log);
 </tr>
 
 <?php
-while ($row = mysql_fetch_assoc($result)) {
+while ($row = mysqli_fetch_assoc($result)) {
   echo "<tr>";
   echo "<td>Category</td>";
   echo "<td>" . $row['category'] . "</td>";
@@ -175,7 +176,7 @@ while ($row = mysql_fetch_assoc($result)) {
 </tr>
 
 <?php
-while ($row = mysql_fetch_assoc($result_log)) {
+while ($row = mysqli_fetch_assoc($result_log)) {
   echo "<tr>";
   echo "<td>" . $row['date'] . "</td>";
   echo "<td>" . $row['log'] . "</td>";
@@ -190,13 +191,13 @@ while ($row = mysql_fetch_assoc($result_log)) {
 
 <h3 align="center">Documents</h3>
 
-<?php while ($row = mysql_fetch_assoc($result_document)) { ?>
+<?php while ($row = mysqli_fetch_assoc($result_document)) { ?>
     <p style="text-align:center;"><a href="uploads/<?php echo $ID ?>/<?php echo $row['filename'] ?>"><?php echo $row['filename'] ?></a></p>
 <?php } ?>
 
 <hr>
 <h3 align="center">Images</h3>
-<?php while ($row = mysql_fetch_assoc($result_picture)) { ?>
+<?php while ($row = mysqli_fetch_assoc($result_picture)) { ?>
     <img src="uploads/<?php echo $ID ?>/<?php echo $row['filename'] ?>">
 <?php } ?>
 
