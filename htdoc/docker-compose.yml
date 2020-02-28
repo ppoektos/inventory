@@ -1,0 +1,41 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: "3.1"
+services:
+
+    mysql:
+      image: mysql:5.7.29
+      container_name: mysql
+      working_dir: /var/lib/mysql
+      command: mysqld --sql_mode="" #--skip-mysqlx
+      volumes:
+        - ./mysql:/var/lib/mysql
+      environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=inv
+        - MYSQL_USER=inv
+        - MYSQL_PASSWORD=inv
+      ports:
+        - "3306:3306"
+
+    webserver:
+      image: nginx:alpine
+      container_name: nginx
+      working_dir: /application
+      volumes:
+          - .:/application
+          - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      ports:
+       - "80:80"
+
+    php-fpm:
+      #build: phpdocker/php-fpm
+      #image: inv_php-fpm
+      image: ppo220/php_fpm:latest
+      container_name: php-fpm
+      working_dir: /application
+      volumes:
+        - .:/application
+        - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.4/fpm/conf.d/99-overrides.ini
+

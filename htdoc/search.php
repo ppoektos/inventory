@@ -7,7 +7,7 @@
     $result1 = mysqli_query($conn, $sql1);
     $sql2 = "select local_id, description from items where description LIKE '%{$key}%'";
     $result2 = mysqli_query($conn, $sql2);
-    while ($row = mysql_fetch_assoc($result1))
+    while ($row = mysqli_fetch_assoc($result1))
     {
       #echo $row['local_id'];
       #$array[] = $row['local_id']

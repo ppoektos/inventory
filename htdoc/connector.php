@@ -2,16 +2,10 @@
 	ini_set('display_errors', 1);
 	error_reporting(E_ALL);
 
-	#$link = mysql_connect(':/var/run/mysqld/mysqld.sock', '', '');
-	#if (!$link) { die ('Connection error: ' . mysql_error()); }
-
-	#$db_selected = mysql_select_db('', $link);
-	#if (!$db_selected) { die ('Database error: ' . mysql_error()); }
-	
-	$servername = "";
-    $username = "";
-    $password = "";
-    $dbname = "";
+	$servername = "mysql";
+    $username = "inv";
+    $password = "inv";
+    $dbname = "inv";
     
     $conn = mysqli_connect($servername, $username, $password, $dbname);
 

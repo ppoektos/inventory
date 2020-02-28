@@ -16,7 +16,7 @@ round((purchase_value - ((year(curdate()) - year(purchase_date)) * (purchase_val
 AS ActualValue from items";
 #	union select '' AS ,'' AS ,'Sum' AS Sum, sum(purchase_value) AS SUM, '' AS from items
 
-$result = mysql_query($conn, $sql);
+$result = mysqli_query($conn, $sql);
 
 if (!$result) {
     $message  = 'Wrong query: ' . mysql_error() . "\n";
