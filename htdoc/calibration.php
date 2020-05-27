@@ -35,7 +35,7 @@ if (!$result) {
   <th>Interval</th>
   <th>Calibration last</th>
   <th>Calibration next</th>
-  <th>Days left</t
+  <th>Days left</th>
 </tr>
 <?php
 while ($row = mysqli_fetch_assoc($result)) {
