@@ -1,4 +1,7 @@
 #!/bin/bash
+
+mkdir testdir
+
 cd ./testdir || exit 1
 
 create_dirs () {
